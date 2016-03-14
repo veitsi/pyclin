@@ -3,25 +3,6 @@ from os import listdir
 #init
 
 def extract():
-
-    global ws
-    #      Назва клінічного випробування, код, версія та дата (здесь лучше отдельно также вытянуть код дослідження (в название страницы) и фаза, если есть)
-    # ·         Заявник, країна (заявитель может повторяться в разных исследованиях)
-    # ·         Спонсор, країна (спонсор может повторяться в разных исследованиях)
-    # ·         Перелік досліджуваних лікарських засобів лікарська форма, дозування, виробник, країна
-    # ·         Відповідальний (і) дослідник (и) та місце (я) проведення випробування в Україні (здесь, как правило, несколько центров. Желательно их разделить. Центры в разных исследованиях могут повторяться. Когда будешь разбивать этот параметр - исследователи тоже могут повторяться.) Лучше: місце проведення випробування; адреса; Відповідальний дослідник
-    # ·         Препарати порівняння, виробник та країна
-    # ·         Супутні матеріали/препарати супутньої терапії
-
-    # out_file = open('2015.csv', 'w')
-    # outcsv = csv.writer(out_file)
-    # outcsv = csv.DictWriter(out_file,
-    #                         fieldnames=['номер','Назва клінічного випробування',
-    #                                     'Заявник', 'Спонсор',
-    #                                     'Перелік досліджуваних засобів',
-    #                                     'Відповідальний дослідник',
-    #                                     'Препарати порівняння',
-    #                                     'Супутні матеріали'])
     out_file=open('2015.txt','w')
     out_row = 0
     for file in listdir('./2015'):
@@ -46,36 +27,11 @@ def extract():
 
                 out_file.write(str(out_row))
                 out_file.write(title)
-    
-                # print(out_row)
-                # print(title)
-                # print(zayavnyk)
-                # print(sponsor)
-                # print(tocompare)
-                # print(bonus)
 
-                # outcsv.writerow([out_row, title,
-                #                  zayavnyk, sponsor,
-                #                  drugslist, responder,
-                #                  'tocompare', 'bonus'])
-
-                # ws.write(out_row, 0, dgst_num)
-                # ws.write(out_row, 1, title)
-                # ws.write(out_row, 2, zayavnyk)
-                # ws.write(out_row, 3, sponsor)
             row += 1
         print(out_row)
         out_file.close()
 
 
-wb = xlwt.Workbook()
-ws = wb.add_sheet('A Test Sheet')
-ws.write(0, 0, 'Test')
-# try:
-#     extract()
-# except Exception as e:
-#     print('some **it happens')
-#     print(e)
 extract()
 
-wb.save('2015.xls')
