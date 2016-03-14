@@ -25,12 +25,18 @@ def extract():
                 bonus = sheet.cell(row + 10, 1).value
                 print(out_row, title[:25], zayavnyk[:25], drugslist[:25])
 
-                out_file.write(str(out_row))
-                out_file.write(title)
+                out_file.write(str(out_row)+"\n")
+                out_file.write(title+'\n')
+                out_file.write(zayavnyk+'\n')
+                out_file.write(sponsor+'\n')
+                out_file.write(drugslist+'\n')
+                out_file.write(responder+'\n')
+                out_file.write(tocompare+'\n')
+                out_file.write(bonus+'\n')
 
             row += 1
         print(out_row)
-        out_file.close()
+    out_file.close()
 
 
 extract()
