@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Дослідження {{card['id']}}</title>
+</head>
+<body>
+<h3>Інформація по дослідженню {{card['id']}}</h3>
+<div>{{card['title']}}</div>
+<div>{{card['zayavnik']}}</div>
+<div>{{card['sponsor']}}</div>
+<div>{{card['druglist']}}</div>
+<div>{{card['responder']}}</div>
+<div>{{card['tocompare']}}</div>
+<div>{{card['bonus']}}</div>
+<br>
+<a href="../index.html">Повернутись до переліку дослідженнь</a>
+{#
+                'id':'id',
+                'title': title,
+                'zayavnik': zayavnik,
+                'sponsor': sponsor,
+                'druglist': druglist,
+                'responder': responder,
+                'tocompare': tocompare,
+                'bonus': bonus
+#}
+</body>
+</html>

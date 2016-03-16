@@ -2,26 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Клінічні дослідження в Україні</title>
 </head>
 <body>
 <div>
-    {#This document describes the syntax and semantics of the
+
+</div>
+{% for issue in inv %}
+<a href="{{issue['file']}}">card: {{issue['id']}}</a><br>
+{% endfor %}
+<a href="index.html">Повернутися до переліку досліженнь</a>
+</body>
+</html>
+{#This document describes the syntax and semantics of the
     template engine and will be most useful as reference to those
     creating Jinja templates. As the template engine is very
     flexible, the configuration from the application
     can be slightly different from the code presented
     here in terms of delimiters and behavior of undefined values.
-
-
-    The default syntax of Jinja2 matches Django syntax in many ways. However this similarity doesn’t mean that you can
-    use a Django template unmodified in Jinja2. For example filter arguments use a function call syntax rather than a
-    colon to separate filter name and arguments. Additionally the extension interface in Jinja is fundamentally
-    different from the Django one which means that your custom tags won’t work any longer.
     #}
-</div>
-{% for issue in inv %}
-<a href="{{issue['file']}}">card: {{issue['id']}}</a><br>
-{% endfor %}
-</body>
-</html>
