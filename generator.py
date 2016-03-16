@@ -51,7 +51,7 @@ def load_data():
                 'tocompare': tocompare,
                 'bonus': bonus
                 }
-        render_card(file, card)
+        # render_card(file, card)
         rez.append(card)
 
         num = f.readline()
