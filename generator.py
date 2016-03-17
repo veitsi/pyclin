@@ -18,10 +18,8 @@ def render_card(card):
 
 inv=pickle.load(open("2015.p", "rb"))
 render_main(inv)
-render_card(inv[0])
-# for i in inv:
-#     render_card(i)
+# render_card(inv[0])
+for i in inv:
+    render_card(i)
 
-# # for i in inv:
-# #     print((i['id']))
 
