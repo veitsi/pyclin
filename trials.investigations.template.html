@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html id="trials">
+<head>
+
+    <title>Клінічні дослідження в Україні</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <!-- Reset stylesheet -->
+    <link href="trials_files/reset.css" type="text/css" rel="stylesheet" media="all">
+
+    <!--[if lte IE 7]>
+    <link href="http://trials.in.ua/assets/css/ie.css" type="text/css" rel="stylesheet" media="all"/>
+    <![endif]-->
+    <link href="trials_files/master.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="trials_files/thickbox.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="http://trials.in.ua/assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+
+    <script type="text/javascript" src="trials_files/jquery-1.js"></script>
+</head>
+
+
+<body id="main">
+
+<div class="wrapper">
+
+
+    <div id="content">
+        <a name="top"></a>
+        <div class="content studies">
+
+            <h2 class="main-title">Дослідження</h2>
+            <div>
+                На сторінці представлені коди досліджень, що проводяться чи проводились в Україні.
+                натиснувши на лінк певного дослідження Ви маєте змогу
+                отримати по ньому більш детальну інформацію
+            </div>
+            <br>
+            <div class="info">
+                Показані дослідження <b>1-129</b> з <b>129</b>
+            </div>
+
+            <table style="border: 1px solid #CCC;">
+                <tbody>
+                <tr class="odd">
+                    <th style="width: 10%">Код дослідження</th>
+                    <th style="width: 70%">Назва дослідження</th>
+                    <th style="width: 15%">Статус</th>
+                    <th></th>
+                </tr>
+                {% for issue in inv %}
+                <tr style="border: 1px solid #0F0;">
+                    <td><a href="{{issue['file']}}">{{issue['id']}}</a></td>
+                    <td>{{issue['title']}}</td>
+                    <td><strong class="inactive">Набір завершено</strong></td>
+                    <td class="go">
+                        <a href="{{issue['file']}}"><img src="trials_files/show.png"></a>
+                    </td>
+                </tr>
+                {% endfor %}
+
+
+                </tbody>
+            </table>
+
+            <br style="clear: right">
+
+        </div>
+
+        <script type="text/javascript">
+        jQuery(document).ready(function () {
+        $(".studies tr:nth-child(odd)").addClass("odd");
+        });
+        </script>
+    </div>
+
+    <div class="bottom-string">
+        <span> 2016 © Клінічні дослідження в Україні</span>
+    </div>
+
+</div><!-- @end wrapper -->
+</body>
+</html>
